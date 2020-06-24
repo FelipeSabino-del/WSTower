@@ -8,6 +8,6 @@ namespace WSTower.Interfaces
 {
     public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
-        Usuario BuscarEmailSenha();
+        Usuario BuscarEmailSenha(Usuario usuario);
     }
 }

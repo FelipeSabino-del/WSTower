@@ -12,12 +12,12 @@ namespace WSTower.Repositories
     {
         WSTowerContext ctx = new WSTowerContext();
 
-        public void Add()
+        public void Add(Jogador obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Delete(Jogador obj)
         {
             throw new NotImplementedException();
         }
@@ -27,7 +27,12 @@ namespace WSTower.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update()
+        public Jogador GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Jogador obj)
         {
             throw new NotImplementedException();
         }

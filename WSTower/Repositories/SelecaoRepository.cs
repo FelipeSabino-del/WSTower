@@ -12,12 +12,12 @@ namespace WSTower.Repositories
     {
         WSTowerContext ctx = new WSTowerContext();
 
-        public void Add()
+        public void Add(Selecao obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Delete(Selecao obj)
         {
             throw new NotImplementedException();
         }
@@ -27,7 +27,12 @@ namespace WSTower.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update()
+        public Selecao GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Selecao obj)
         {
             throw new NotImplementedException();
         }

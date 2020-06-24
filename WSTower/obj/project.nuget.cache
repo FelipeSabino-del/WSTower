@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2p3cZqoYF4WDJTQncewVteKDNbosXFW9OwqwH7fn96Cp7RawWh38wkzuOtv+QV1dOFZiO0YfL/7kfCaFpnK7Tw==",
+  "dgSpecHash": "yUFBPPLqLPkFIm8/s+XLFwocZgVSgGMpDzoDi82gagyc+qK3tCiev9PbYguqAFDIyMh6wtN1f6XKjDrn7QqAbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

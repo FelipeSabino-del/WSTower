@@ -7,9 +7,10 @@ namespace WSTower.Interfaces
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {
-        void Add();
-        void Update();
-        void Delete();
+        void Add(TEntity obj);
+        void Update(TEntity obj);
+        void Delete(TEntity obj);
         IEnumerable<TEntity> GetAll();
+        TEntity GetById(int id);
     }
 }

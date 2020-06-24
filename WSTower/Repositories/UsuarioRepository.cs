@@ -12,17 +12,17 @@ namespace WSTower.Repositories
     {
         WSTowerContext ctx = new WSTowerContext();
 
-        public void Add()
+        public void Add(Usuario obj)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario BuscarEmailSenha()
+        public Usuario BuscarEmailSenha(Usuario usuario)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Delete(Usuario obj)
         {
             throw new NotImplementedException();
         }
@@ -32,7 +32,12 @@ namespace WSTower.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update()
+        public Usuario GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Usuario obj)
         {
             throw new NotImplementedException();
         }
