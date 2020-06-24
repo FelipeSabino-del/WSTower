@@ -8,38 +8,14 @@ using WSTower.Interfaces;
 
 namespace WSTower.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UsuarioRepository : RepositoryBase<Usuario>,IUsuarioRepository
     {
         WSTowerContext ctx = new WSTowerContext();
-
-        public void Add(Usuario obj)
+        
+        public Usuario BuscarEmailSenha(string email, string senha)
         {
-            throw new NotImplementedException();
+            return ctx.Usuario.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
 
-        public Usuario BuscarEmailSenha(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Usuario obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Usuario> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Usuario GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Usuario obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

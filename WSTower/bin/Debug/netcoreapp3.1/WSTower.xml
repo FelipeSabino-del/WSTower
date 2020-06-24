@@ -4,5 +4,40 @@
         <name>WSTower</name>
     </assembly>
     <members>
+        <member name="M:WSTower.Controllers.UsuarioController.Get">
+            <summary>
+            Retorna todos os usuarios.
+            </summary>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.UsuarioController.Get(System.Int32)">
+            <summary>
+            Retorna um usuario por id.
+            </summary>
+            <param name="id"></param>
+            <returns>Usuario Object</returns>
+        </member>
+        <member name="M:WSTower.Controllers.UsuarioController.Post(WSTower.Domains.Usuario)">
+            <summary>
+            Cadastra um usuario.
+            </summary>
+            <param name="usuario"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.UsuarioController.Put(System.Int32,WSTower.Domains.Usuario)">
+            <summary>
+            Atualiza um usuario passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <param name="usuario"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuario passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <returns>null</returns>
+        </member>
     </members>
 </doc>
