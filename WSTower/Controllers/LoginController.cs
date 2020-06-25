@@ -24,7 +24,12 @@ namespace WSTower.Controllers
         {
             _usuarioRepository = new UsuarioRepository();
         }
-
+        
+        /// <summary>
+        /// Loga o usuario por email ou apelido
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>token</returns>
         [HttpPost]
         public IActionResult Login(LoginViewModel user)
         {
@@ -44,7 +49,7 @@ namespace WSTower.Controllers
                 new Claim(ClaimTypes.Role, "Usuario") // MUDAR ESSA LINHA QUANDO FOR ADD ADM
             };
 
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("senai-inlock-VitorLeonel-ViniciusTakedi-key-auth"));
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("wstower-key-auth"));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
