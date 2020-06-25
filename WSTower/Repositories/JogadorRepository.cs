@@ -8,33 +8,9 @@ using WSTower.Interfaces;
 
 namespace WSTower.Repositories
 {
-    public class JogadorRepository : IJogadorRepository
+    public class JogadorRepository : RepositoryBase<Jogador>,IJogadorRepository
     {
         WSTowerContext ctx = new WSTowerContext();
 
-        public void Add(Jogador obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Jogador obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Jogador> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Jogador GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Jogador obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

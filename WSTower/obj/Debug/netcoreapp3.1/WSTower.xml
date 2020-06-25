@@ -4,6 +4,76 @@
         <name>WSTower</name>
     </assembly>
     <members>
+        <member name="M:WSTower.Controllers.JogadorController.Get">
+            <summary>
+            Retorna todos os jogadores.
+            </summary>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.JogadorController.Get(System.Int32)">
+            <summary>
+            Retorna um jogador por id.
+            </summary>
+            <param name="id"></param>
+            <returns>Jogador Object</returns>
+        </member>
+        <member name="M:WSTower.Controllers.JogadorController.Post(WSTower.Domains.Jogador)">
+            <summary>
+            Cadastra um usuario.
+            </summary>
+            <param name="jogador"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.JogadorController.Put(System.Int32,WSTower.Domains.Jogador)">
+            <summary>
+            Atualiza um jogador passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <param name="jogador"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.JogadorController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogador passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.Get">
+            <summary>
+            Retorna todas as seleções.
+            </summary>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.Get(System.Int32)">
+            <summary>
+            Retorna uma seleção por id.
+            </summary>
+            <param name="id"></param>
+            <returns>Selecao Object</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.Post(WSTower.Domains.Selecao)">
+            <summary>
+            Cadastra uma seleção.
+            </summary>
+            <param name="selecao"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.Put(System.Int32,WSTower.Domains.Selecao)">
+            <summary>
+            Atualiza uma seleção passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <param name="selecao"></param>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.Delete(System.Int32)">
+            <summary>
+            Deleta uma seleção passando o seu id na url
+            </summary>
+            <param name="id"></param>
+            <returns>null</returns>
+        </member>
         <member name="M:WSTower.Controllers.UsuarioController.Get">
             <summary>
             Retorna todos os usuarios.

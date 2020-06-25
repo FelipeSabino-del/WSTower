@@ -8,33 +8,77 @@ using WSTower.Interfaces;
 
 namespace WSTower.Repositories
 {
-    public class SelecaoRepository : ISelecaoRepository
+    public class SelecaoRepository : RepositoryBase<Selecao>, ISelecaoRepository
     {
         WSTowerContext ctx = new WSTowerContext();
+        int vitorias, empates = 0;
 
-        public void Add(Selecao obj)
+        public IEnumerable<Selecao> OrdemNome()
         {
-            throw new NotImplementedException();
+            IEnumerable<Selecao> selecaos = GetAll();
+
+            return selecaos.OrderBy(s => s.Nome).ToList();
         }
 
-        public void Delete(Selecao obj)
+        public int Pontos(int id)
         {
-            throw new NotImplementedException();
+            Selecao selecao = GetById(id);
+
+            int pontos = 0;
+            int vitorias = 0;
+            int empates = 0;
+
+            foreach (var item in selecao.JogoSelecaoCasaNavigation)
+            {
+                var vitoria = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa > j.PlacarVisitante);
+                var empate = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
+
+                if (vitoria)
+                {
+                    vitorias += 1;
+                }
+
+                if (empate)
+                {
+                    empates += 1;
+                }
+            }
+
+            foreach (var item in selecao.JogoSelecaoVisitanteNavigation)
+            {
+                var vitoria = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa < j.PlacarVisitante);
+                var empate = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
+
+                if (vitoria)
+                {
+                    vitorias += 1;
+                }
+
+                if (empate)
+                {
+                    empates += 1;
+                }
+            }
+
+            return pontos = (vitorias * 3) + empates;
+
         }
 
-        public IEnumerable<Selecao> GetAll()
+        public Dictionary<Selecao, int> OrdemPontos(int id)
         {
-            throw new NotImplementedException();
-        }
+            Dictionary<Selecao, int> dicionario = new Dictionary<Selecao, int>();
+            IEnumerable<Selecao> selecaos = GetAll();
 
-        public Selecao GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+            foreach (Selecao item in selecaos)
+            {
+                var pontos = Pontos(item.Id);
+                dicionario.Add(item, pontos);
 
-        public void Update(Selecao obj)
-        {
-            throw new NotImplementedException();
+            }
+
+           
+
+            return dicionario;
         }
     }
 }
