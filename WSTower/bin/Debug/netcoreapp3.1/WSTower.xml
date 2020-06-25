@@ -39,9 +39,22 @@
             <param name="id"></param>
             <returns>null</returns>
         </member>
+        <member name="M:WSTower.Controllers.LoginController.Login(WSTower.ViewModels.LoginViewModel)">
+            <summary>
+            Loga o usuario por email ou apelido
+            </summary>
+            <param name="user"></param>
+            <returns>token</returns>
+        </member>
         <member name="M:WSTower.Controllers.SelecaoController.Get">
             <summary>
             Retorna todas as seleções.
+            </summary>
+            <returns>null</returns>
+        </member>
+        <member name="M:WSTower.Controllers.SelecaoController.GetOrderByDescending">
+            <summary>
+            Retorna todas as seleções ordenada.
             </summary>
             <returns>null</returns>
         </member>

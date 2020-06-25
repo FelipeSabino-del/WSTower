@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using WSTower.Domains;
 using WSTower.Interfaces;
 using WSTower.Repositories;
+using WSTower.ViewModels;
 
 namespace WSTower.Controllers
 {
@@ -32,10 +33,19 @@ namespace WSTower.Controllers
         [HttpGet]
         public IEnumerable<Selecao> Get()
         {
-            Console.WriteLine();
-            Console.WriteLine(_selecaoRepository.OrdemPontos(0));
-            Console.WriteLine();
             return _selecaoRepository.GetAll();
+        }
+
+        /// <summary>
+        /// Retorna todas as seleções ordenada.
+        /// </summary>
+        /// <returns>null</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        // GET: api/<Selecao>
+        [HttpGet("Pontos")]
+        public IEnumerable<SelecaoViewModel> GetOrderByDescending()
+        {
+            return _selecaoRepository.OrdemPontos();
         }
 
         /// <summary>

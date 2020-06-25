@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WSTower.Contexts;
 using WSTower.Domains;
 using WSTower.Interfaces;
+using WSTower.ViewModels;
 
 namespace WSTower.Repositories
 {
     public class SelecaoRepository : RepositoryBase<Selecao>, ISelecaoRepository
     {
         WSTowerContext ctx = new WSTowerContext();
-        int vitorias, empates = 0;
 
         public IEnumerable<Selecao> OrdemNome()
         {
@@ -61,24 +63,28 @@ namespace WSTower.Repositories
             }
 
             return pontos = (vitorias * 3) + empates;
-
         }
 
-        public Dictionary<Selecao, int> OrdemPontos(int id)
+        public IEnumerable<SelecaoViewModel> OrdemPontos()
         {
-            Dictionary<Selecao, int> dicionario = new Dictionary<Selecao, int>();
             IEnumerable<Selecao> selecaos = GetAll();
 
-            foreach (Selecao item in selecaos)
+            List<SelecaoViewModel> selecaoOrdenada = new List<SelecaoViewModel>();
+
+            foreach (var item in selecaos)
             {
-                var pontos = Pontos(item.Id);
-                dicionario.Add(item, pontos);
+                SelecaoViewModel selecaoViewModel = new SelecaoViewModel();
+
+                selecaoViewModel.Id = item.Id;
+                selecaoViewModel.Nome = item.Nome;
+                selecaoViewModel.Bandeira = item.Bandeira;
+                selecaoViewModel.Pontos = Pontos(item.Id);
+
+                selecaoOrdenada.Add(selecaoViewModel);
 
             }
 
-           
-
-            return dicionario;
+          return selecaoOrdenada.OrderByDescending(x => x.Pontos);
         }
     }
 }
