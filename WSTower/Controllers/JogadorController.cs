@@ -55,7 +55,7 @@ namespace WSTower.Controllers
         }
 
         /// <summary>
-        /// Cadastra um usuario.
+        /// Cadastra um jogador.
         /// </summary>
         /// <param name="jogador"></param>
         /// <returns>null</returns>

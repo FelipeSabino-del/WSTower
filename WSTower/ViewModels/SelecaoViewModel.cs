@@ -8,9 +8,7 @@ namespace WSTower.ViewModels
 {
     public class SelecaoViewModel
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public byte[] Bandeira { get; set; }
+        public Selecao Selecao { get; set; }
         public int Pontos { get; set; }
     }
 }

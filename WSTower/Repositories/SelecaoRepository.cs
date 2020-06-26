@@ -30,35 +30,42 @@ namespace WSTower.Repositories
             int vitorias = 0;
             int empates = 0;
 
-            foreach (var item in selecao.JogoSelecaoCasaNavigation)
+            foreach (var item in selecao.JogoSelecaoCasaNavigation = ctx.Jogo.ToList())
             {
-                var vitoria = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa > j.PlacarVisitante);
-                var empate = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
-
-                if (vitoria)
+                if (item.SelecaoCasa.GetValueOrDefault() == id)
                 {
-                    vitorias += 1;
+                    var vitoria = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa > j.PlacarVisitante);
+                    var empate = selecao.JogoSelecaoCasaNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
+
+                    if (vitoria)
+                    {
+                        vitorias += 1;
+                    }
+
+                    if (empate)
+                    {
+                        empates += 1;
+                    }
                 }
 
-                if (empate)
-                {
-                    empates += 1;
-                }
             }
 
-            foreach (var item in selecao.JogoSelecaoVisitanteNavigation)
+            foreach (var item in selecao.JogoSelecaoVisitanteNavigation = ctx.Jogo.ToList())
             {
-                var vitoria = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa < j.PlacarVisitante);
-                var empate = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
-
-                if (vitoria)
+                if (item.SelecaoVisitante.GetValueOrDefault() == id)
                 {
-                    vitorias += 1;
-                }
+                    var vitoria = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa < j.PlacarVisitante);
+                    var empate = selecao.JogoSelecaoVisitanteNavigation.Any(j => j.PlacarCasa == j.PlacarVisitante);
 
-                if (empate)
-                {
-                    empates += 1;
+                    if (vitoria)
+                    {
+                        vitorias += 1;
+                    }
+
+                    if (empate)
+                    {
+                        empates += 1;
+                    }
                 }
             }
 
@@ -75,9 +82,7 @@ namespace WSTower.Repositories
             {
                 SelecaoViewModel selecaoViewModel = new SelecaoViewModel();
 
-                selecaoViewModel.Id = item.Id;
-                selecaoViewModel.Nome = item.Nome;
-                selecaoViewModel.Bandeira = item.Bandeira;
+                selecaoViewModel.Selecao = item;
                 selecaoViewModel.Pontos = Pontos(item.Id);
 
                 selecaoOrdenada.Add(selecaoViewModel);
