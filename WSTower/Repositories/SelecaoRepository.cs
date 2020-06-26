@@ -86,5 +86,6 @@ namespace WSTower.Repositories
 
           return selecaoOrdenada.OrderByDescending(x => x.Pontos);
         }
+
     }
 }

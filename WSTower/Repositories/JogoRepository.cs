@@ -5,36 +5,63 @@ using System.Threading.Tasks;
 using WSTower.Contexts;
 using WSTower.Domains;
 using WSTower.Interfaces;
+using WSTower.ViewModels;
 
 namespace WSTower.Repositories
 {
-    public class JogoRepository : IJogoRepository
+    public class JogoRepository : RepositoryBase<Jogo>, IJogoRepository
     {
         WSTowerContext ctx = new WSTowerContext();
-
-        public void Add(Jogo obj)
+        public IEnumerable<Jogo> OrdemDecrescente()
         {
-            throw new NotImplementedException();
+            IEnumerable<Jogo> jogos = GetAll();
+
+            return jogos.OrderByDescending(j => j.Data).ToList();
         }
 
-        public void Delete(Jogo obj)
+        public IEnumerable<Jogo> JogoPorData(DateTime data)
         {
-            throw new NotImplementedException();
+            IEnumerable<Jogo> jogos = GetAll();
+
+            return jogos.Where(j => j.Data == data).ToList();
         }
 
-        public IEnumerable<Jogo> GetAll()
+        public IEnumerable<Jogo> JogoPorEstadioSelecao(string estadioSelecao)
         {
-            throw new NotImplementedException();
+            //IEnumerable<Jogo> jogos = GetAll();
+
+            return ctx.Jogo.Where(j => j.Estadio == estadioSelecao || j.SelecaoCasaNavigation.Nome == estadioSelecao || j.SelecaoVisitanteNavigation.Nome == estadioSelecao).ToList();
         }
 
-        public Jogo GetById(int id)
+        public List<JogoViewModel> JogoFiltro()
         {
-            throw new NotImplementedException();
-        }
+            List<Jogo> listaJogos = ctx.Jogo.ToList();
 
-        public void Update(Jogo obj)
-        {
-            throw new NotImplementedException();
+            foreach (var item in listaJogos)
+            {
+                item.SelecaoCasaNavigation = ctx.Selecao.Find(item.SelecaoCasa);
+                item.SelecaoVisitanteNavigation = ctx.Selecao.Find(item.SelecaoVisitante);
+            }
+
+            List<JogoViewModel> jogosFiltrado = new List<JogoViewModel>();
+
+            foreach (var item in listaJogos)
+            {
+                JogoViewModel jogoView = new JogoViewModel
+                {
+                    Id = item.Id,
+                    SelecaoCasa = item.SelecaoCasaNavigation.Nome,
+                    SelecaoVisitante = item.SelecaoVisitanteNavigation.Nome,
+                    PlacarCasa = item.PlacarCasa,
+                    PlacarVisitante = item.PenaltisVisitante,
+                    UniformeCasa = item.SelecaoCasaNavigation.Uniforme,
+                    UniformeVisitante = item.SelecaoVisitanteNavigation.Uniforme
+                };
+                jogosFiltrado.Add(jogoView);
+            }
+
+            return jogosFiltrado;
         }
+        
     }
 }

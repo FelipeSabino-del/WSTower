@@ -10,7 +10,5 @@ namespace WSTower.Repositories
 {
     public class JogadorRepository : RepositoryBase<Jogador>,IJogadorRepository
     {
-        WSTowerContext ctx = new WSTowerContext();
-
     }
 }

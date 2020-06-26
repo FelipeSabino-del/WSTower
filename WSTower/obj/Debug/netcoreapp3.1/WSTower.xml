@@ -39,6 +39,70 @@
             <param name="id"></param>
             <returns>null</returns>
         </member>
+        <member name="M:WSTower.Controllers.JogoController.Get">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns> 
+            Retorna a lista dos jogos e o status code 200 - Ok || code 400 - Bad Request
+            </returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Get(System.Int32)">
+            <summary>
+            Busca um jogo através do seu ID
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>Retorna um jogo buscado ou NotFound caso nenhum seja encontrado</returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Get(System.DateTime)">
+            <summary>
+            Busca um jogo através da data
+            </summary>
+            <param name="data">ID do jogo que será buscado</param>
+            <returns>Retorna um jogo buscado ou NotFound caso nenhum seja encontrado</returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="404">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Get(System.String)">
+            <summary>
+            Busca um jogo através da seleçao ou do estádio
+            </summary>
+            <param name="nome">ID do jogo que será buscado</param>
+            <returns>Retorna um jogo buscado ou NotFound caso nenhum seja encontrado</returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="404">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Post(WSTower.Domains.Jogo)">
+            <summary>
+            Cadastra um novo confronto
+            </summary>
+            <param name="jogo">Objeto novoJogo que será cadastrado</param>
+            <response code="201">Se o Jogo for cadastrado com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Put(System.Int32,WSTower.Domains.Jogo)">
+            <summary>
+            Atualiza um jogo pelo ID.
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <param name="jogo">ID do jogo que será buscado</param>
+            <returns>null</returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+        </member>
+        <member name="M:WSTower.Controllers.JogoController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogo pelo ID.
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>null</returns>
+            <response code="200">Se a lista for acessada com sucesso</response>
+            <response code="404">Erro em alguma parte da requisição</response>
+        </member>
         <member name="M:WSTower.Controllers.LoginController.Login(WSTower.ViewModels.LoginViewModel)">
             <summary>
             Loga o usuario por email ou apelido

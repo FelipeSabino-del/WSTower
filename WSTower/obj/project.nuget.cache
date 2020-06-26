@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lXfY0MoAA3dkaqqJNVnvsv6NC9AFiehi8UWq+jdavFm+fKLbNFNSkHAFtMVNRWstCkAdcfieg0R0H0WvvfSbCw==",
+  "dgSpecHash": "TN3EWZuLZpoL3l8etIB79kWpT/yFbEYdi+gdKQZNMAt4ha82dgDrQG+gPnrCZBAkcyvDnmRs0yMIePNvhLEX0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -44,7 +44,14 @@ namespace WSTower.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_usuarioRepository.GetById(id));
+            if (_usuarioRepository.GetById(id) != null)
+            {
+                return Ok(_usuarioRepository.GetById(id));
+            }
+            else
+            {
+                return BadRequest("Usuario nao encontrado.");
+            }
         }
 
         /// <summary>

@@ -44,7 +44,14 @@ namespace WSTower.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_jogadorRepository.GetById(id));
+            if (_jogadorRepository.GetById(id) != null)
+            {
+                return Ok(_jogadorRepository.GetById(id));
+            }
+            else
+            {
+                return BadRequest("Jogador nao encontrado.");
+            }
         }
 
         /// <summary>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj": {}
+    "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj": {
+    "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj",
         "projectName": "WSTower",
-        "projectPath": "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\WSTower.csproj",
+        "projectPath": "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\WSTower.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\Desktop\\WsTower\\WSTower\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\Desktop\\WSTower\\WSTower\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\Microsoft\\Xamarin\\NuGet\\",
