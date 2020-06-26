@@ -11,6 +11,6 @@ namespace WSTower.Interfaces
     {
         IEnumerable<Jogo> JogoPorData(DateTime data);
         IEnumerable<Jogo> JogoPorEstadioSelecao(string estadioSelecao);
-        List<JogoViewModel> JogoFiltro();
+        IEnumerable<JogoViewModel> JogoFiltro();
     }
 }

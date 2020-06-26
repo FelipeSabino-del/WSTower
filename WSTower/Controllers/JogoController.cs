@@ -34,9 +34,15 @@ namespace WSTower.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<JogoViewModel> Get()
+        public IActionResult Get()
         {
-            return _jogoRepository.JogoFiltro();
+            IEnumerable<JogoViewModel> lista = _jogoRepository.JogoFiltro();
+
+            if (lista.Count() == 0)
+            {
+                return BadRequest("Cadastre um jogo.");
+            }
+            return Ok(lista);
         }
 
         /// <summary>

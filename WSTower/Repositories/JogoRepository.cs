@@ -33,7 +33,7 @@ namespace WSTower.Repositories
             return ctx.Jogo.Where(j => j.Estadio == estadioSelecao || j.SelecaoCasaNavigation.Nome == estadioSelecao || j.SelecaoVisitanteNavigation.Nome == estadioSelecao).ToList();
         }
 
-        public List<JogoViewModel> JogoFiltro()
+        public IEnumerable<JogoViewModel> JogoFiltro()
         {
             List<Jogo> listaJogos = ctx.Jogo.ToList();
 
