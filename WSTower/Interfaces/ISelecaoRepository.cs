@@ -11,5 +11,6 @@ namespace WSTower.Interfaces
     {
         public int Pontos(int id);
         public IEnumerable<SelecaoViewModel> OrdemPontos();
+        public IEnumerable<Selecao> OrdemNome();
     }
 }

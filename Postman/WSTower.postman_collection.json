@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c3e3a40e-0221-40ee-887b-5d14ec899b3f",
+		"_postman_id": "e5a5f759-63fd-4751-8798-28ac44d855e4",
 		"name": "WSTower",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -438,6 +438,48 @@
 								"api",
 								"Selecao",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Selecao.ListarPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Selecao/Nomes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Selecao",
+								"Nomes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Selecao.ListarPorPontos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Selecao/Pontos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Selecao",
+								"Pontos"
 							]
 						}
 					},

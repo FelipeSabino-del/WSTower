@@ -37,7 +37,7 @@ namespace WSTower.Controllers
         }
 
         /// <summary>
-        /// Retorna todas as seleções ordenada.
+        /// Retorna todas as seleções ordenada por pontos.
         /// </summary>
         /// <returns>null</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -46,6 +46,18 @@ namespace WSTower.Controllers
         public IEnumerable<SelecaoViewModel> GetOrderByDescending()
         {
             return _selecaoRepository.OrdemPontos();
+        }
+
+        /// <summary>
+        /// Retorna todas as seleções ordenada por nomes.
+        /// </summary>
+        /// <returns>null</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        // GET: api/<Selecao>
+        [HttpGet("Nomes")]
+        public IEnumerable<Selecao> GetOrderByNames()
+        {
+            return _selecaoRepository.OrdemNome();
         }
 
         /// <summary>
